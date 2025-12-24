@@ -1,10 +1,12 @@
 import Auth from "./auth"
 
+
 function App() {
 
   return (
     <>
       < Auth/>
+
     </>
   )
 }
