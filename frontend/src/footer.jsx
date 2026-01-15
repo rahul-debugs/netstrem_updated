@@ -28,6 +28,12 @@ export default function Footer() {
               Watch your favorite movies, shows, and live entertainment in one
               place.
             </p>
+<p className="mt-2 text-sm text-gray-400 max-w-xs">
+  Design and developed by 
+  <span className="text-purple-400 font-medium"> Rahul K S</span>
+</p>
+
+         
           </div>
 
           {/* Footer Links */}
@@ -111,6 +117,8 @@ export default function Footer() {
           <span className="text-xs text-gray-500 text-center sm:text-left">
             © 2025 <span className="text-white font-semibold">NetStream™</span>. All rights reserved.
           </span>
+
+          
 
           <div className="flex justify-center sm:justify-end mt-4 sm:mt-0 space-x-6">
             <a href="#" className="hover:text-white transition-colors duration-200">

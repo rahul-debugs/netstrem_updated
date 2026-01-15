@@ -131,8 +131,9 @@ const navItems = [
   { name: "TV Shows", href: "/tvshow" },
   { name: "Movies", href: "/movies" },
   { name: "Live", href: "/live" },
-  { name: "Subscription", href: "/subscription" },
   { name: "Watchlist", href: "/watchlist" },
+  { name: "Latest update ", href: "/Blog" },
+  { name: "Subscription", href: "/subscription" },
   { name: "About", href: "/about" },
 ];
 

@@ -9,6 +9,7 @@ import Live from "./pages/live";
 import Tvshow from "./pages/tvshow";
 import Subscription from "./pages/subscription";
 import Watchlist from "./pages/Watchlist";
+import Blog from "./pages/myblog";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Route path="/tvshow" element={<Tvshow />} />
       <Route path="/subscription" element={<Subscription/>} />
       <Route path="/watchlist" element={<Watchlist/>} />
+      <Route path="/blog" element={<Blog/>} />
     </Routes>
 <Footer/> 
   </BrowserRouter>
