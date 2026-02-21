@@ -22,19 +22,35 @@ Including another URLconf
 #     path('api/', include('users.urls')),
 #      path('apis/', include('movies.urls')),
 # ]
+# ------------------------------------------------------
+# from django.contrib import admin
+# from django.urls import path, include
+# from django.conf import settings
+# from django.conf.urls.static import static
+
+# urlpatterns = [  
+#     path('admin/', admin.site.urls),
+#     path('api/', include('users.urls')),
+#     path('apis/', include('movies.urls')),
+#     path('api/', include('blog.urls')),  # 👈 correct way
+# ]
+
+# # Serve media files (images uploaded via admin)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# -----------------------------------------------------------------------------------
 
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.http import HttpResponse
 
-urlpatterns = [  
+def home(request):
+    return HttpResponse("Backend is running successfully 🚀")
+
+urlpatterns = [
+    path('', home),  # Root URL added ✅
     path('admin/', admin.site.urls),
-    path('api/', include('users.urls')),
-    path('apis/', include('movies.urls')),
-    path('api/', include('blog.urls')),  # 👈 correct way
+    path('api/users/', include('users.urls')),
+    path('api/movies/', include('movies.urls')),
+    path('api/blog/', include('blog.urls')),
 ]
-
-# Serve media files (images uploaded via admin)
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
