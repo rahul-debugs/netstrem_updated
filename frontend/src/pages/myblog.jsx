@@ -168,10 +168,12 @@ function Blog() {
   I’m 
   <span className="font-semibold text-blue-600"> Rahul</span>, the admin of 
   <span className="font-semibold text-gray-900"> NetStream</span>, and users are welcome to share their 
-  <span className="text-blue-600 font-medium"> suggestions and ideas</span> — all 
+  <span className="text-blue-600 font-medium"> suggestions and ideas and more content</span> — all 
   <span className="text-blue-600 font-medium"> important updates and improvements</span> 
   will be posted here.
 </p>
+
+
       {/* ================= LOADER ================= */}
       {loading && (
         <div className="flex flex-col items-center mt-10">
