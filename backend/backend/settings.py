@@ -1,8 +1,25 @@
+# from pathlib import Path
+# import os
+# import cloudinary
+# from dotenv import load_dotenv
+# load_dotenv() 
+
+# BASE_DIR = Path(__file__).resolve().parent.parent
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+import cloudinary
+
+# ========================
+# BASE DIRECTORY
+# ========================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# 👇 Load .env FIRST
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+
+# 🔍 Now test after loading
 
 # ========================
 # SECURITY SETTINGS
@@ -20,6 +37,10 @@ ALLOWED_HOSTS = ['*']   # Later you can put your render domain
 # ========================
 
 INSTALLED_APPS = [
+
+    'cloudinary',
+    'cloudinary_storage',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,8 +146,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # ========================
@@ -134,3 +153,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # ========================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
