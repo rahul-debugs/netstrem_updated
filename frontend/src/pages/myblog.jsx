@@ -160,9 +160,18 @@ function Blog() {
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col items-center px-4 py-12">
-
+<br /><br />
       <h1 className="text-4xl font-bold mb-6">Latest Updates</h1>
 
+      <br />
+<p className="max-w-4xl mx-auto mt-6 mb-12 text-center text-gray-600 text-base md:text-lg leading-relaxed">
+  I’m 
+  <span className="font-semibold text-blue-600"> Rahul</span>, the admin of 
+  <span className="font-semibold text-gray-900"> NetStream</span>, and users are welcome to share their 
+  <span className="text-blue-600 font-medium"> suggestions and ideas</span> — all 
+  <span className="text-blue-600 font-medium"> important updates and improvements</span> 
+  will be posted here.
+</p>
       {/* ================= LOADER ================= */}
       {loading && (
         <div className="flex flex-col items-center mt-10">
@@ -221,7 +230,7 @@ function Blog() {
       {!loading && updates.length === 0 && !error && (
         <p className="mt-10 text-gray-500">No updates available.</p>
       )}
-
+<br /><br />
       <p className="mt-12 text-md font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 animate-pulse">
         🔔 More exciting updates are coming soon… stay tuned!
       </p>
